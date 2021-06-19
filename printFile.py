@@ -13,3 +13,5 @@ number_of_lines = p
 for p in range(number_of_lines):
 	line = a_file.readline()
 	print(line)
+
+print("Program complete")
