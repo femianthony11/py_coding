@@ -1,2 +1,19 @@
 # py_coding
-coding class
+
+
+
+
+
+
+
+
+
+
+
+### CLONE A REPO 
+
+
+	<git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY>
+
+
+
