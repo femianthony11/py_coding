@@ -30,7 +30,7 @@ print(int(args[2]))
 
 
 
-f = open("notes.txt", "r")
+f = open(args[1], "r")
 
 num_lines = sum(1 for line in open(args[1]))
 
