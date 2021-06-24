@@ -4,6 +4,8 @@ from traceback import format_tb
 
 print(sys.argv)
 args = sys.argv
+a_file = open(args[1])
+
 
 def isInt(s):
     try: 
@@ -26,8 +28,6 @@ if os.path.exists(args[1]) == False:
 	print("File does not exist...")
 	quit()
 print(int(args[2]))
-
-
 
 
 f = open(args[1], "r")
