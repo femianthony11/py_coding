@@ -2,6 +2,12 @@ import os.path
 import sys
 from traceback import format_tb
 
+
+print(sys.argv)
+args = sys.argv
+a_file = open(args[1])
+
+
 def isInt(s):
     try: 
         int(s)
@@ -32,7 +38,6 @@ number_of_lines = int(number_of_lines)
 if os.path.exists(filename) == False:
 	print("File does not exist...")
 	quit()
-
 
 
 f = open(filename, "r")
