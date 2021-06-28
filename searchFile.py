@@ -12,12 +12,21 @@ search_item = search_item.rjust(2)
 f = open(filename, "r")
 
 lines = f.readlines()
-res = list(filter(lambda x: search_item in x, lines))
-print(str(res))
+#Function to search for a string in the file
+def search_string_in_file(filename, str):
+    line_number = 0
+    list_of_results = []
+    with open(filename, 'r') as read_obj:
+        for line in read_obj:
+            line_number += 1
+            if str in line:
+                list_of_results.append((line_number, line.rstrip()))
+    return list_of_results
+#setting a variable equal to the result(or calling) of the function
+results=search_string_in_file(filename,search_item)
 
-new_list = [item for item in lines if all((w in item) for w in search_item.rjust(1))]
-
-if len(new_list) !=0:
-	print(new_list)
+#If statement to check whether the file even contains our keyword
+if len(results) != 0:
+	print(*results, sep="\n")
 else:
 	print('No matches')
