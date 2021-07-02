@@ -43,13 +43,13 @@ def main():
 	args = sys.argv
 	#Checking if each argument is an integer and quitting if not
 	if isInt(args[1]) == False:
-		print('n must be an integer')
+		print('arg must be an integer')
 		quit()
 	elif isInt(args[2]) == False:
-		print('n must be an integer')
+		print('arg must be an integer')
 		quit()
 	elif isInt(args[3]) == False:
-		print('n must be an integer')
+		print('arg must be an integer')
 		quit()
 
 	#Setting variables equal to the indexes of the arguments inputted at the terminal
