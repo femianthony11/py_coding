@@ -4,6 +4,12 @@ import re
 import math
 from math import sqrt
 
+def isInt(s):
+    try: 
+        int(s)
+        return True
+    except ValueError:
+        return False
 
 #Defining function to calculate the Discriminant
 def calculate_discriminant(a,b,c):
@@ -33,12 +39,27 @@ def solve(a,b,d):
 
 
 def main():
+	#Setting the variable args equal to the arguments passed in terminal
 	args = sys.argv
+	#Checking if each argument is an integer and quitting if not
+	if isInt(args[1]) == False:
+		print('n must be an integer')
+		quit()
+	elif isInt(args[2]) == False:
+		print('n must be an integer')
+		quit()
+	elif isInt(args[3]) == False:
+		print('n must be an integer')
+		quit()
+
+	#Setting variables equal to the indexes of the arguments inputted at the terminal
 	A = int(args[1])
 	B = int(args[2])
 	C = int(args[3])
+	#Setting the discriminant equal to the A,B and C values passed in the function used to find the discriminant
 	discriminant = (calculate_discriminant(A,B,C))
 	print(discriminant)
+	#Checking if the discriminant is greater than zero to figure out whether to run the function solve, which is used to do the quadratic formula
 	if discriminant >= 0:
 		solve(A,B,discriminant)
 	else:
