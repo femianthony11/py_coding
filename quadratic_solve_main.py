@@ -52,6 +52,7 @@ def main():
 		print('n must be an integer')
 		quit()
 
+
 	#Setting variables equal to the indexes of the arguments inputted at the terminal
 	A = int(args[1])
 	B = int(args[2])
