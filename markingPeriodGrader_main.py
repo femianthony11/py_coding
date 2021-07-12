@@ -2,6 +2,7 @@ import os.path
 import sys
 from traceback import format_tb
 import re
+# Need to pip install tabulate
 from tabulate import tabulate
 import numpy
 
