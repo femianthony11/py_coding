@@ -21,12 +21,13 @@ if isInt(n) == False:
 def conv_to_words(n):
     n = int(n)
     nums = [int(d) for d in str(n)]
+    if int(n) > 100:
+        print('Number is out of range')
+        quit()
     if (n > 1) and (n < 20) or (n == 100):
         print((nums20[n]))
     elif (n > 20) or (n < 99):
         n1 = nums[0]
         n2 = nums[1]
         print('Your number converted is:' + numtens[n1] +" " + nums20[n2].lower())
-    else:
-        print('Number is out of range')
 conv_to_words(n)
