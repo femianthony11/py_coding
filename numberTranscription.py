@@ -37,8 +37,12 @@ def conv_to_words(n):
     if len(str(n)) == 3:
         n3 = nums[1]
         n4 = nums[2]
+        n5 = str(nums[1:2])
+        n6 = str(nums[2:3])
         if (int(ntr[1]) == 0) and (int(ntr[2]) == 0):
             print(numshunds[ntr[0]])
+        elif (int(ntr[1]) == 1):
+            print(numshunds[ntr[0]] + ' '  + nums20[str(n5.strip("[]")) + str(n6.strip("[]"))].lower())
         else:
             print(numshunds[ntr[0]] + ' and ' + numtens[str(n3)] + ' ' + nums20[str(n4)].lower())
     elif len(str(n)) == 4:
@@ -46,6 +50,8 @@ def conv_to_words(n):
             print(numsthous[ntr[0]])
         elif (int(ntr[2]) == 0) and (int(ntr[3]) == 0):
             print(numsthous[ntr[0]] + ' ' + numshunds[ntr[1]].lower())
+        elif (int(ntr[1]) == 0) and (int(ntr[2]) == 0):
+            print(numsthous[ntr[0]] + ' ' +' and ' + nums20[str(nums[3])])
         elif (int(ntr[3]) == 0):
             print(numsthous[ntr[0]] +' ' + numshunds[ntr[1]].lower() + ' and ' + numtens[str(nums[2])].lower())
         else:
