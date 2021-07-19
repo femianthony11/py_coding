@@ -53,7 +53,7 @@ def conv_to_words(n):
 
 
     elif (n >=0) and (n<=19):
-        print(numconv + nums20[n])
+        print(numconv + nums20[ntr])
     elif n % 10 == 0:
         print(numconv + ' ' + numstens[n].lower())
     else:
