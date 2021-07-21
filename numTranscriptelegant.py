@@ -61,6 +61,10 @@ numsthous = {'1': 'One Thousand', '2': 'Two Thousand', '3': 'Three Thousand', '4
     '6': 'Six Thousand', '7': 'Seven Thousand', '8': 'Eight Thousand', '9': 'Nine Thousand'}
 nums = [int(d) for d in str(n)]
 
+if (nint < 0) or (len(n) > 4):
+    print('Input out of range, please input numbers between 0 and 9999')
+    quit()
+
 if len(n) == 1:
     print(oned(n))
 elif len(n) == 2:
@@ -69,6 +73,8 @@ elif len(n) == 3:
     print(threed(n))
 elif len(n) == 4:
     print(fourd(n))
+
+
 
 
 
