@@ -2,12 +2,25 @@ import os.path
 import sys
 from traceback import format_tb
 import re
-
 args = sys.argv
+
 n = args[1]
+
+def isInt(s):
+    try: 
+        int(s)
+        return True
+    except ValueError:
+        return False
+
+if isInt(n) == False:
+    print('Please enter a number')
+    quit()
 nint = int(n)
 n0 = n[0]
 n1 = n[1]
+
+
 def oned(n):
     return (nums20[n])
 def twod(n):
