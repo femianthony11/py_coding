@@ -34,18 +34,36 @@ def twod(n):
         return (numtens[n0] + ' ' + oned(n1))
 def threed(n):
     n0 = n[0]
+    n3 = n[2]
     n23 = n[1:]
     if (int(n[1]) == 0) and (int(n[2]) == 0):
         return (numshunds[n0])
+    elif int(n[1] == 0):
+        return (numshunds[n0] + ' and ' + nums20[n3])
     else:
         return (numshunds[n0] + ' and ' + twod(n23))
 def fourd(n):
     n0 = n[0]
     n1 = n[1]
     n23 = n[1:]
+    n34 = n[2:]
+    n1m = n[-1]
+    n0m = n[0:]
     if (int(n[1]) == 0) and (int(n[2]) == 0) and (int(n[3]) == 0):
+        print('hi1')
         return numsthous[n0]
+    elif (int(n[1]) ==0) and (int(n[2]) == 0):
+        print('hi2')
+        return (numsthous[n0] +' and '+ nums20[n1m])
+    elif (int(n[1]) == 0) and (int(n[3]) == 0):
+        print('hi3')
+        return (numsthous[n0]+' ' +twod(n34))
+    elif int(n[1] == 0):
+        print(n[1])
+        print('hi4')
+        return (numsthous[n0] +' ' +twod(n34))
     else:
+        print(threed(n23))
         return (numsthous[n0] +' ' + threed(n23))
 
 
