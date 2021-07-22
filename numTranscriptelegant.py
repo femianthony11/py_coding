@@ -6,9 +6,9 @@ args = sys.argv
 
 n = args[1]
 
-def isInt(s):
+def isInt(n):
     try: 
-        int(s)
+        int(n)
         return True
     except ValueError:
         return False
@@ -41,7 +41,7 @@ def threed(n):
     print(n0)
     if (int(n[1]) == 0) and (int(n[2]) == 0):
         return (numshunds[n0])
-    elif int(n[1] == 0):
+    elif (int(n[1]) == 0):
         return (numshunds[n0] + ' and ' + nums20[n3])
     else:
         print(n23)
