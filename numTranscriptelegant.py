@@ -18,7 +18,6 @@ if isInt(n) == False:
     quit()
 nint = int(n)
 n0 = n[0]
-n1 = n[1]
 
 
 def oned(n):
@@ -42,7 +41,6 @@ def threed(n):
     elif (int(n[1]) == 0):
         return (numshunds[n0] + ' and ' + nums20[n3])
     else:
-        print(n23)
         return (numshunds[n0] + ' and ' + twod(n23))
 def fourd(n):
     n0 = n[0]
