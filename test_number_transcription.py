@@ -25,7 +25,6 @@ class NumTest(unittest.TestCase):
                 5555:"Five Thousand Five Hundred and Fifty Five", 
                 9130:"Nine Thousand One Hundred and Thirty", 
                 9999: "Nine Thousand Nine Hundred and Ninety Nine"}
-    testlst = [0,11]
     def test_fact(self):
         for item in self.testlist:
             n = str(item)
