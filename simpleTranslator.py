@@ -7,7 +7,7 @@ langdict = {'french':'fr','afrikaans':'af','german':'de','latin':'la','swahili':
 
 translator = Translator()
 
-if language not in langdict:
+if language.lower() not in langdict:
     print('Invalid Language')
     quit()
 
