@@ -3,10 +3,12 @@ from pprint import pprint
 
 
 def invert_dict(dictionary):
+    #function to invert dicts
     new_dict = dict([(value, key) for key, value in dictionary.items()])
     return (new_dict)
 
 def runt(phrase,language,langdict):
+    #run function to translate phrases
     translator = Translator()
     translation = translator.translate(phrase,dest = langdict[language])
     return (f"{translation.text}")
@@ -14,6 +16,7 @@ def runt(phrase,language,langdict):
 
 
 def main():
+    #prints available languages
     print("""This is the available list of languages: 
         England:1  
         French: 2  
