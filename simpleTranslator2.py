@@ -11,18 +11,18 @@ def runt(phrase,language,langdict):
 
 
 def main():
-    print('This is the available list of languages: \
-        England:1  \
-        French: 2  \
-        Afrikaans: 3 \
-        German: 4 \
-        Latin: 5 \
-        Swahili: 6 \
-        Yoruba: 7  \
-        Portuguese: 8 \
-        Spanish: 9 \
-        Zulu: 10 \
-            ')
+    print("""This is the available list of languages: 
+        England:1  
+        French: 2  
+        Afrikaans: 3 
+        German: 4 
+        Latin: 5 
+        Swahili: 6 
+        Yoruba: 7  
+        Portuguese: 8 
+        Spanish: 9 
+        Zulu: 10 
+            """)
     s = input("Please enter source Language: ")
     p = input("Please enter Phrase: ")
     l = input("Please enter Destination Language: ")
