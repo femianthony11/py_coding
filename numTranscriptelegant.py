@@ -3,6 +3,7 @@ import sys
 from traceback import format_tb
 import re
 args = sys.argv
+#function to check if input is an int
 
 def isInt(n):
     try: 
@@ -11,7 +12,7 @@ def isInt(n):
     except ValueError:
         return False
 
-
+#number dicts
 nums20 = {'0': 'Zero', '1': 'One', '2': 'Two', '3': 'Three', '4': 'Four', '5': 'Five', \
     '6': 'Six', '7': 'Seven', '8': 'Eight', '9': 'Nine', '10': 'Ten', \
     '11': 'Eleven', '12': 'Twelve', '13': 'Thirteen', '14': 'Fourteen', \
@@ -22,6 +23,8 @@ numshunds = {'1': 'One Hundred', '2': 'Two Hundred', '3': 'Three Hundred', '4': 
     '6': 'Six Hundred', '7': 'Seven Hundred', '8': 'Eight Hundred', '9': 'Nine Hundred'}
 numsthous = {'1': 'One Thousand', '2': 'Two Thousand', '3': 'Three Thousand', '4': 'Four Thousand', '5': 'Five Thousand', \
     '6': 'Six Thousand', '7': 'Seven Thousand', '8': 'Eight Thousand', '9': 'Nine Thousand'}
+#checks length of number to figure out what way to print words for that number,
+ #has different functions for each length of numbers from 0-4
 if len(args) > 1:
     n = args[1]
 def oned(n):
