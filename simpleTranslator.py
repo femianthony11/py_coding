@@ -29,6 +29,7 @@ def main():
         Spanish: 9 
         Zulu: 10 
             """)
+    #asks for inputs
     s = input("Please enter source Language: ")
     p = input("Please enter Phrase: ")
     l = input("Please enter Destination Language: ")
