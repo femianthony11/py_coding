@@ -39,8 +39,6 @@ class ComplexNumber:
 
     def conj1(self):
         conjnum = ComplexNumber(self.a, -self.b)
-
-
         return conjnum
 # Check if self.b is negative!
     def __str__(self):
