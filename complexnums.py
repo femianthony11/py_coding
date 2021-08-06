@@ -54,8 +54,8 @@ def main():
     magnitude = compnum.magn()
     conjugate = compnum.conj1()
 
-    print(magnitude)
-    print(conjugate)
+    print(f"Magnitude = {magnitude}")
+    print(f" Conjugate = {conjugate}")
 
 if __name__ == "__main__":
     main()
