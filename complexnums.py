@@ -41,7 +41,7 @@ class ComplexNumber:
         if int(self.b) < 0:
             conjnum = ComplexNumber(self.a, self.b)
         else:
-            conjnum = ComplexNumber(self.a,str(-int(self.b)))
+            conjnum = ComplexNumber(self.a,self.b)
 
 
         return conjnum
