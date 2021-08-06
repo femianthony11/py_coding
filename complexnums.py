@@ -11,18 +11,7 @@ def isInt(n):
 
 
 
-arg1 = (input("Enter number 1: "))
-arg2 = (input("Enter number 2: "))
 
-#if isInt(arg1) == False:
-#    print("PLEASE INPUT NUMBER")
-#    quit()
-#elif isInt(arg1) == False:
-#
-#    quit()
-
-arg1 = int(arg1)
-arg2 = int(arg2)
 class ComplexNumber:
 
 
@@ -47,10 +36,26 @@ class ComplexNumber:
         else:
             return (str(self.a) +"+" + str(self.b)+"i")
 
-compnum = ComplexNumber(arg1,arg2)
+def main():
+    arg1 = (input("Enter number 1: "))
+    arg2 = (input("Enter number 2: "))
 
-magnitude = compnum.magn()
-conjugate = compnum.conj1()
+    #if isInt(arg1) == False:
+    #    print("PLEASE INPUT NUMBER")
+    #    quit()
+    #elif isInt(arg1) == False:
+    #
+    #    quit()
 
-print(magnitude)
-print(conjugate)
+    arg1 = int(arg1)
+    arg2 = int(arg2)
+    compnum = ComplexNumber(arg1,arg2)
+
+    magnitude = compnum.magn()
+    conjugate = compnum.conj1()
+
+    print(magnitude)
+    print(conjugate)
+
+if __name__ == "__main__":
+    main()
