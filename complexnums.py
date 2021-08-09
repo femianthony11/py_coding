@@ -51,10 +51,10 @@ def op(ope):
 
 
 def main():
-    arg1 = (input("Enter number 1: "))
-    arg2 = (input("Enter number 2: "))
-    arg3 = (input("Enter number 3: "))
-    arg4 = (input("Enter number 4: "))
+    arg1 = (input("Enter number 1(Real): "))
+    arg2 = (input("Enter number 1(Imaginary): "))
+    arg3 = (input("Enter number 2(Real): "))
+    arg4 = (input("Enter number 2(Imaginary: "))
     arg5 = input("Enter Operation( + , - , x) : ")
 
 
