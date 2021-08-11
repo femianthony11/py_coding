@@ -21,7 +21,7 @@ class compTest(unittest.TestCase):
                 "9,4":"9.848857801796104", 
                 "6,2":"6.324555320336759"}
 
-        self.oplist = {"z1+z2":"9+i","z1-z2":"1+5i","z1*z2":"26+2i"}
+        self.oplist = {"z1+z2":"4+6i"}
 
 
     def test_fact(self):
@@ -44,33 +44,56 @@ class compTest(unittest.TestCase):
             res = str(conjugate)
             self.assertEqual(res,self.conjlist[item])
         for item in self.oplist:
-            z1 = ("5+3i")
-            z2 = ("4-2i")
-            a1 = item[2]
-            n1 = int(z1[0])
-            n2 = int(z1[2])
-            n3 = int(z2[0])
-            n4 = -(int(z2[2]))
-            ans = ComplexNumber(n1,n2)
-            add = ans.__add__(n3,n4)
+            arg1 = 1
+            arg2 = 2
+            arg3 = 3
+            arg4 = 4
+            
+            a1 = '-'
+            z1 = ComplexNumber(arg1,arg2)
+            z2 =  ComplexNumber(arg3,arg4)
+            z1 = str(z1)
+            z2 = str(z2)
 
-            sub = ans.__sub__(n3,n4)
-            mul = ans.__mul__(n3,n4)
+            z1 = z1.replace("i","j")
+            z2 = z2.replace("i","j")
+
+            z1 = complex(z1)
+            z2 = complex(z2)
+            print(z1)
+            print(z2)
+
+            if (a1 == '+'):
+                z3 = z1+z2
+                z3 = str(z3)
+                z3 = z3.replace("j","i")
+        
+
+                
             
 
             if (a1 == '+'):
-                res = str(add)
+                z3 = z1+z2
+                res = str(z3)
                 res = res.replace("1","")
                 res = res.replace("(","")
                 res = res.replace(")","")
                 res = res.replace("j","i")
             elif (a1 == '-'):
-                res = str(sub)
+                z3 = z1-z2
+                res = str(z3)
                 res = res.replace("(","")
                 res = res.replace(")","")
                 res = res.replace("j","i")
             elif (a1 == '*'):
-                res =str(mul)
+                z3 = z1*z2
+                res =str(z3)
+                res = res.replace("(","")
+                res = res.replace(")","")
+                res = res.replace("j","i")
+            elif (a1 == '/'):
+                z3 = z1/z2
+                res =str(z3)
                 res = res.replace("(","")
                 res = res.replace(")","")
                 res = res.replace("j","i")
