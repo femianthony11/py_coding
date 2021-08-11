@@ -31,15 +31,20 @@ class ComplexNumber:
         return conjnum
 # Check if self.b is negative!
 
-    def __add__(self,other,other1):
-        addi =  ComplexNumber(self.a+other, self.b+other1)
+    def __add__(self,other):
+        addi =  ComplexNumber(self.a+other.a, self.b+other.b)
         return addi
-    def __sub__(self, other,other1):
-        sub = complex(self.a-other, self.b-other1)
+    def __sub__(self, other):
+        sub = complex(self.a-other.a, self.b-other.b)
         return sub
-    def __mul__(self, other,other1):
-        mul = complex(self.a*other-self.b*other1, self.a*other1+self.b*other)
+    def __mul__(self, other):
+        mul = complex(self.a*other.a-self.b*other.b, self.a*other.b+self.b*other.a)
         return mul
+    def __div__(self, other):
+            try: 
+                return self.__mul__(complex(other.a, -1*other.b)).__mul__(complex(1.0/(other.mod().real)**2, 0))
+            except Exception as e:
+                print('error')
     def __str__(self):
         if int(self.b) < 0:
             return (str(self.a)+ str(self.b)+"i")
@@ -55,7 +60,7 @@ def main():
     arg2 = (input("Enter number 1(Imaginary): "))
     arg3 = (input("Enter number 2(Real): "))
     arg4 = (input("Enter number 2(Imaginary: "))
-    arg5 = input("Enter Operation( + , - , x) : ")
+    arg5 = input("Enter Operation( + , - , x, /) : ")
 
 
 
@@ -64,12 +69,28 @@ def main():
     arg3 = int(arg3)
     arg4 = int(arg4)
     compnum = ComplexNumber(arg1,arg2,)
-
+    numi = compnum
+    numi = str(numi)
+    print(numi)
+    numi = complex(numi.replace("i","j"))
+    
     magnitude = compnum.magn()
     conjugate = compnum.conj1(arg1,arg2)
-    add = compnum.__add__(arg3,arg4)
-    sub = compnum.__sub__(arg3,arg4)
-    mul = compnum.__mul__(arg3,arg4)
+    other = ComplexNumber(arg3,arg4)
+
+    numii = other
+    numii = str(numii)
+    print(numii)
+    numii = complex(numii.replace("i","j"))
+
+    add = compnum + other
+    sub = compnum - other
+    mul = compnum * other
+    div = numi / numii
+    div = str(div)
+    div = div.replace("j","i")
+    div = div.replace("(","")
+    div = div.replace(")","")
     print(f"Magnitude = {magnitude}")
     print(f" Conjugate = {conjugate}")
 
@@ -79,6 +100,8 @@ def main():
         print(op(sub))
     elif (arg5 == 'x'):
         print(op(mul))
+    elif (arg5 == '/'):
+        print(op(div))
     
 
 
