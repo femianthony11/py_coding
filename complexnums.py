@@ -71,7 +71,6 @@ def main():
     compnum = ComplexNumber(arg1,arg2,)
     numi = compnum
     numi = str(numi)
-    print(numi)
     numi = complex(numi.replace("i","j"))
     
     magnitude = compnum.magn()
@@ -80,12 +79,21 @@ def main():
 
     numii = other
     numii = str(numii)
-    print(numii)
     numii = complex(numii.replace("i","j"))
 
+
     add = compnum + other
+    add = str(add)
+    add = add.replace("j","i")
+    
     sub = compnum - other
+    sub = str(sub)
+    sub = sub.replace("j","i")
+    
     mul = compnum * other
+    mul = str(mul)
+    mul = mul.replace("j","i")
+    
     div = numi / numii
     div = str(div)
     div = div.replace("j","i")
