@@ -16,70 +16,70 @@ class ComplexNumber:
 
 
     def __init__(self,a,b):
-        self.a = a
-        self.b = b
+        self.real = a
+        self.imag = b
 
     def magn(self):
-        xy = self.a**2 + self.b**2
+        xy = self.real**2 + self.imag**2
         xyz = abs(sqrt(xy))
         return xyz
 
 
 
-    def conj1(self,a,b):
-        conjnum = ComplexNumber(self.a,-self.b,)
+    def conj1(self,real,imag):
+        conjnum = ComplexNumber(self.real,-self.imag,)
         return conjnum
-# Check if self.b is negative!
+# Check if self.imag is negative!
 
     def __add__(self,other):
-        addi =  ComplexNumber(self.a+other.a, self.b+other.b)
+        addi =  ComplexNumber(self.real+other.real, self.imag+other.imag)
         return addi
     def __sub__(self, other):
-        sub = complex(self.a-other.a, self.b-other.b)
+        sub = self.real-other.real, self.imag-other.imag
         return sub
     def __mul__(self, other):
-        mul = complex(self.a*other.a-self.b*other.b, self.a*other.b+self.b*other.a)
+        mul = self.real*other.real-self.imag*other.imag, self.real*other.imag+self.imag*other.real
         return mul
     def __div__(self, other):
             try: 
-                return self.__mul__(complex(other.a, -1*other.b)).__mul__(complex(1.0/(other.mod().real)**2, 0))
+                return self.__mul__(other.real, -1*other.imag).__mul__(1.0/(other.mod().real)**2, 0)
             except Exception as e:
                 print('error')
     def __str__(self):
-        if int(self.b) < 0:
-            return (str(self.a)+ str(self.b)+"i")
+        if int(self.imag) < 0:
+            return (str(self.real)+ str(self.imag)+"i")
         else:
-            return (str(self.a) +"+" + str(self.b)+"i")
+            return (str(self.real) +"+" + str(self.imag)+"i")
 def op(ope):
     return (f"Operation = {ope}")
 
 
 
 def main():
-    arg1 = (input("Enter number 1(Real): "))
-    arg2 = (input("Enter number 1(Imaginary): "))
-    arg3 = (input("Enter number 2(Real): "))
-    arg4 = (input("Enter number 2(Imaginary: "))
+    arg1 = int((input("Enter number 1(Real): ")))
+    arg2 = int((input("Enter number 1(Imaginary): ")))
+    arg3 = int((input("Enter number 2(Real): ")))
+    arg4 = int((input("Enter number 2(Imaginary: ")))
     arg5 = input("Enter Operation( + , - , x, /) : ")
 
 
 
-    arg1 = int(arg1)
-    arg2 = int(arg2)
-    arg3 = int(arg3)
-    arg4 = int(arg4)
-    compnum = ComplexNumber(arg1,arg2,)
-    numi = compnum
-    numi = str(numi)
-    numi = complex(numi.replace("i","j"))
     
+
+    compnum = ComplexNumber(arg1,arg2)
     magnitude = compnum.magn()
     conjugate = compnum.conj1(arg1,arg2)
     other = ComplexNumber(arg3,arg4)
+    
+    numi = compnum
+    numi = str(numi)
+    numi = numi.replace("i","j")
+    numi = complex(numi)
 
-    numii = other
+    numii = (other)
     numii = str(numii)
-    numii = complex(numii.replace("i","j"))
+    numii = numii.replace("i","j")
+    numii = complex(numii)
 
 
     add = compnum + other
