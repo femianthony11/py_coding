@@ -88,61 +88,49 @@ def main():
     arg2 = int((input("Enter number 1(Imaginary): ")))
     arg3 = int((input("Enter number 2(Real): ")))
     arg4 = int((input("Enter number 2(Imaginary: ")))
-    arg5 = input("Enter Operation( + , - , x, /) : ")
+    arg5 = input("Enter Operation( + , - , x, /,<= ,>=,==,!=,<,> ) : ")
 
 
 
     
 
-    compnum = ComplexNumber(arg1,arg2)
-    magnitude = compnum.magn()
-    conjugate = compnum.conj1(arg1,arg2)
-    other = ComplexNumber(arg3,arg4)
-    
-    numi = compnum
+    complex1 = ComplexNumber(arg1,arg2)
+    magnitude = complex1.magn()
+    conjugate = complex1.conj1(arg1,arg2)
+    complex2 = ComplexNumber(arg3,arg4)
+    numi = complex1
     numi = str(numi)
     numi = numi.replace("i","j")
     numi = complex(numi)
 
-    numii = (other)
+    numii = (complex2)
     numii = str(numii)
     numii = numii.replace("i","j")
     numii = complex(numii)
 
-
-    add = compnum + other
-    add = str(add)
-    add = add.replace("j","i")
-    
-    sub = compnum - other
-    sub = str(sub)
-    sub = sub.replace("j","i")
-    
-    mul = compnum * other
-    mul = str(mul)
-    mul = mul.replace("j","i")
-    
-    div = numi / numii
-    div = str(div)
-    div = div.replace("j","i")
-    div = div.replace("(","")
-    div = div.replace(")","")
     print(f"Magnitude = {magnitude}")
     print(f" Conjugate = {conjugate}")
 
     if (arg5 == '+'):
-        print(op(add))
+        print(complex1+complex2)
     elif (arg5 == '-'):
-        print(op(sub))
+        print(complex1-complex2)
     elif (arg5 == 'x'):
-        print(op(mul))
+        print(complex1*complex2)
     elif (arg5 == '/'):
-        print(op(div))
-
-    compare = compnum.cmp(other.magn())
-    print(compare)
-    
-    print(compnum == other)
+        print((complex1)/(complex2))
+    if arg5 == "<=":
+        print(op(complex1 <= complex2))
+    elif arg5 == "<":
+        print(complex1 < complex2)
+    elif arg5 == "==":
+        print(complex1 == complex2)
+    elif arg5 == ">":
+        print(complex1 > complex2)
+    elif arg5 == ">=":
+        print(complex1 >= complex2)
+    elif arg5 == "!=":
+        print(complex1 != complex2)
 
 if __name__ == "__main__":
     main()
