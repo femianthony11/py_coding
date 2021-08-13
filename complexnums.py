@@ -48,9 +48,9 @@ class ComplexNumber:
     
     def cmp(self,other):
             # Check the suits
-            if self.magn() > other:
+            if self.magn() > other.magn:
                 return 1
-            if self.magn() < other:
+            if self.magn() < other.magn:
                 return -1
             # Ranks are the same... it's a tie
             return 0
@@ -74,6 +74,9 @@ class ComplexNumber:
         return self.cmp(other) != 0
 
     def __str__(self):
+        if int(self.imag) == 0:
+            print(self.real)
+            quit()
         if int(self.imag) < 0:
             return (str(self.real)+ str(self.imag)+"i")
         else:
