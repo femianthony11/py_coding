@@ -35,16 +35,44 @@ class ComplexNumber:
         addi =  ComplexNumber(self.real+other.real, self.imag+other.imag)
         return addi
     def __sub__(self, other):
-        sub = self.real-other.real, self.imag-other.imag
+        sub = ComplexNumber(self.real-other.real, self.imag-other.imag)
         return sub
     def __mul__(self, other):
-        mul = self.real*other.real-self.imag*other.imag, self.real*other.imag+self.imag*other.real
+        mul = ComplexNumber(self.real*other.real-self.imag*other.imag, self.real*other.imag+self.imag*other.real)
         return mul
     def __div__(self, other):
             try: 
-                return self.__mul__(other.real, -1*other.imag).__mul__(1.0/(other.mod().real)**2, 0)
+                return ComplexNumber(self.__mul__(other.real, -1*other.imag).__mul__(1.0/(other.mod().real)**2, 0))
             except Exception as e:
                 print('error')
+    
+    def cmp(self,other):
+            # Check the suits
+            if self.magn() > other:
+                return 1
+            if self.magn() < other:
+                return -1
+            # Ranks are the same... it's a tie
+            return 0
+
+    def __eq__(self, other):
+        return self.cmp(other) == 0
+
+    def __le__(self, other):
+        return self.cmp(other) <= 0
+
+    def __ge__(self, other):
+        return self.cmp(other) >= 0
+
+    def __gt__(self, other):
+        return self.cmp(other) > 0
+
+    def __lt__(self, other):
+        return self.cmp(other) < 0
+
+    def __ne__(self, other):
+        return self.cmp(other) != 0
+
     def __str__(self):
         if int(self.imag) < 0:
             return (str(self.real)+ str(self.imag)+"i")
@@ -110,8 +138,11 @@ def main():
         print(op(mul))
     elif (arg5 == '/'):
         print(op(div))
-    
 
+    compare = compnum.cmp(other.magn())
+    print(compare)
+    
+    print(compnum == other)
 
 if __name__ == "__main__":
     main()
