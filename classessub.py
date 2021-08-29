@@ -17,11 +17,11 @@ class Triangle(Shape):
     def __init__(self,dim):
         self.dim = dim
         #THIS IS THE BASE
-        self.a = dim['a']
+        self.a = int(dim['a'])
         #THIS IS THE HEIGHT
-        self.b = dim['b']
+        self.b = int(dim['b'])
 
-        self.c = dim['c']
+        self.c = int(dim['c'])
 
     def perimeter(self):
         perim = self.a+self.b+self.c
@@ -39,14 +39,14 @@ class Triangle(Shape):
 class Circle(Shape):
     def __init__(self,dim):
         self.dim = dim
-        self.c = dim['c']
+        self.rad = int(dim['c'])
 
     def area(self):
-        area = (self.c**2)*math.pi
+        area = (self.rad**2)*math.pi
         return area
 
     def circumference(self):
-        circumference = 2*(math.pi)*self.c
+        circumference = 2*(math.pi)*self.rad
         return circumference
 
     def __str__(self):
@@ -58,8 +58,8 @@ class Rectangle(Shape):
 
     def __init__(self,dim):
         self.dim = dim
-        self.length = dim['length']
-        self.width = dim['width']
+        self.length = int(dim['l'])
+        self.width = int(dim['w'])
     
     def area(self):
         area = self.length*self.width
@@ -77,8 +77,8 @@ class Rectangle(Shape):
 
 
 def main():
-    rect_dim = {"length":2,"width":3}
-    triangle_dim = {"a":2,"b":2,"c":3}
+    rect_dim = {"l":2,"w":3}
+    triangle_dim = {"a":1,"b":2,"c":3}
     circle_dim = {"c":4}
 
 
